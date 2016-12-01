@@ -1,0 +1,345 @@
+@import "variables";
+@import "mixins";
+@import "placeholders";
+
+@include font-face("Alegreya Sans", "AlegreyaSans-Regular");
+
+
+// Whole page
+	html, body {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	//for testing background if something wrong	
+	body {
+		background-color: gray;
+	}
+
+	h1, h2, h3 {
+		font-family: $titleFont;
+		color: silver;
+	}
+
+	p {
+		color: white;
+		font-family: $contentFont;
+		font-size: $contentFontSize;
+	}
+
+	#totentangkami, #tokemitraan, #toharga, #tokontakkami {
+		position: relative;
+		top: -($navHeight);
+		@include medium-screen() {
+			top: (55/100) * -($navHeight);
+		}
+	}
+// Navbar
+	// navbar active
+	.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+		&:before {
+			content: '';
+			position: absolute;
+			left: 5%;
+			right: 5%;
+			bottom: 0;
+			z-index: -1;
+			height: 3px;
+			background: orange;
+			-webkit-transition-property: left, right;
+			-o-transition-property: left, right;
+			transition-property: left, right;
+			-webkit-transition-duration: 0.3s;
+			-o-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			-o-transition-timing-function: ease-out;
+			transition-timing-function: ease-out; 
+		}
+		color: orange !important;
+		background-color: rgba(0,0,0,0) !important;
+
+		@include medium-screen() {
+			&:before {
+				left: 50%;
+				right: 50%;
+			}
+		}
+	}
+
+	.navbar-wrapper {
+		// position
+		position: fixed;
+	  	top: 0;
+		z-index: 9999;
+
+		// size	
+		@extend %defaultWidth;
+		height: $navHeight !important;
+
+		// color and effect
+		background-color: rgba(0,0,0,0.5);
+		box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.5);
+
+		@include medium-screen() {
+			position: fixed;
+			height: (70/100) * $navHeight !important;
+			margin-bottom: 1px;
+			background-color: $primaryColor;
+			box-shadow: 0px 5px 20px 5px rgba(0,0,0,0.5);
+		}
+	}
+
+	.navbar {
+		@include medium-screen() {
+			top: 0px;
+			font-size: (80/100) * $menuFontSize;
+		}
+
+		// position
+		top: 20px;
+
+		// font
+		font-family: $menuFont !important;
+		font-size: $menuFontSize;
+
+		// color and effect
+		background-color: rgba(0,0,0,0); // to make transparant
+		border-radius: 0;
+		border-width: 0;
+
+		// link
+		@include a() {
+			&:before {
+				content:'';
+
+				position: absolute;
+				left: 50%;
+				right: 50%;
+				bottom: 0;
+				z-index: -1;
+				
+				height: 3px;
+				
+				background: orange;
+				
+				-webkit-transition-property: left, right;
+				-o-transition-property: left, right;
+				transition-property: left, right;
+				
+				-webkit-transition-duration: 0.3s;
+				-o-transition-duration: 0.3s;
+				transition-duration: 0.3s;
+				
+				-webkit-transition-timing-function: ease-out;
+				-o-transition-timing-function: ease-out;
+				transition-timing-function: ease-out;
+			}
+
+			&:hover:before, &:active:before, &:focus:before {
+				left: 5%;
+				right: 5%;
+
+				@include medium-screen {
+					left: 50%;
+					right: 50%;
+				}
+			}
+		}
+		
+		// link style for logo
+		.navbar-brand{
+			& > a {
+				color: silver;
+				&:hover:before, &:focus:before, &:active:before {
+					left: 50%;
+					right: 50%;
+				}
+			}
+
+			svg {
+				position: absolute;
+				top: -5px;
+
+				@include medium-screen() {
+					left: -20px;
+					-webkit-transform: scale(0.6);
+					-ms-transform: scale(0.6);
+					-o-transform: scale(0.6);
+					transform: scale(0.6);
+				}
+			}
+		}
+		
+		// link color for navigation
+		.navbar-nav {
+			& > li > a {
+				color: white;
+			}
+		}
+
+
+		&.navbar-inverse .navbar-collapse {
+			border:none;
+			box-shadow: none;
+			text-align: right;
+			@include medium-screen() {
+				float: right;
+				position: relative;
+				top: 20px;
+				background-color: rgba(50,50,50,0.5);
+			}
+		}
+	}
+
+	
+	.navbar-toggle {
+		top: 5px;
+
+		&::before {
+			content: "MENU";
+			font-size: 14px;
+			color: silver;
+			left:-50px;
+		    top:6px;
+		    position:absolute;
+		    width:50px;
+		    color: white;
+		}
+	}
+// Carousel
+	.carousel {
+		.item {
+			// size
+			@extend %defaultWidth;
+			height: 100vh;
+			@include medium-screen() {
+				top: $navHeight - 28px;
+			}		
+
+			//image
+			& > .fill {
+				width: inherit;
+				height: inherit;
+				background-position: center;
+				background-size: cover;
+			}
+		    #car1 {
+		      background-image: url($imgCar1);
+		    }
+		    #car2 {
+		      background-image: url($imgCar2);
+		    }
+		    #car3 {
+		      background-image: url($imgCar3);
+		    }
+		}
+	}
+
+	.carousel-caption {
+
+		left: 30%;
+		right: 30%;
+		bottom: 10%;
+		width: 40%;
+
+		p {
+			font-weight: bold;
+			font-size: $carouselFontSize;
+		}
+
+		&[role="left"]{
+			left: 15%;
+			text-align: left;
+		}
+		
+		.btn {
+			font-weight: bold;
+			color: red;
+			margin-bottom: 10px;
+		}
+
+		:last-child {
+			font-weight: normal;
+			font-size: 14px;
+			@include a(yellow) {
+				font-weight: bold;
+				font-size: 16px;
+			}
+		}
+		@include medium-screen() {
+			bottom: 20%;
+			left: 15%;
+			text-align: left;
+			
+			p {
+				font-size: (55/100) * $carouselFontSize;
+			}	
+
+			:last-child a {
+				font-size: 14px !important;
+				display: block;
+			}
+		}
+		
+	}
+
+#tentangkami, #harga, #kemitraan{
+	@extend %primaryContent;
+	
+}
+
+#kualitas, #desain, #kirim {
+	@extend %content;
+	@extend %fill;
+	@extend %inline-block;
+}
+
+#kualitas {
+	background-image: url($imgCar3);
+	background-attachment: fixed;
+}
+
+#desain {
+	background-image: url($imgCar2);
+	background-attachment: fixed;
+}
+
+#kirim {
+	background-image: url($imgKirim);
+  	background-attachment: fixed;
+}
+
+footer {
+	@extend %defaultWidth;
+	height: 100vh;
+}
+
+.backtotop {
+	//position
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: center;
+	vertical-align: middle;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	padding-top: 5px;
+
+	//size
+	width: 30px;
+	height: 30px;
+
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 4px;
+	cursor: pointer;
+
+	& > a {
+		color: rgba(255,255,255,0.5);
+		&:hover, &:focus {
+			color: rgba(255,255,255,0.8);
+		}
+	}	
+}
+

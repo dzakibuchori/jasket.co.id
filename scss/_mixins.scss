@@ -1,0 +1,52 @@
+//MIXINS
+@mixin tiny-screen(){
+	@media only screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+@mixin small-screen(){
+	@media only screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin medium-screen(){
+	@media only screen and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin large-screen(){
+	@media only screen and (max-width: 960px) {
+		@content;
+	}
+}
+
+@mixin font-face($font-name, $font, $ext: ttf){
+	$font: unquote($font);
+	$ext: $ext;
+	@font-face{
+		font-family: $font-name;
+		@if	$ext == ttf {
+			src: url(/jasket.co.id/fonts/#{$font}.ttf)
+		} @else if $ext == otf{
+			src: url(/jasket.co.id/fonts/#{$font}.otf)
+		}
+	}
+}
+
+@mixin a ($color: white, $hover: darken(orange,30%)) {
+	a {
+		color: $color;
+		text-decoration: none;
+		transition: color 0.7s ease;
+		
+		&:hover, &:focus, &:active{
+			color: lighten($hover, 30%) !important;
+			cursor: pointer;
+		}
+
+		@content;
+	}
+}

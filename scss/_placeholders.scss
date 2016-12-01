@@ -1,0 +1,68 @@
+%content {
+	.row {
+		padding: 30px;
+		max-width: 100%;
+	}
+	.content {
+		background-color: rgba(0,0,0,0.5);
+		padding: 10px;
+	}
+}
+
+%defaultWidth {
+	width: 100%;
+}
+
+%inline-block {
+	display: inline-block;
+	margin: -10px 0;
+	padding: 0;
+	border:0;
+	box-shadow: 0;
+}
+
+%fill {
+	@extend %defaultWidth;
+	height: 400px;
+	background-position: center;
+	background-size: cover;
+
+	@include medium-screen() {
+		height: auto;
+	}
+}
+
+%primaryContent {
+	box-sizing: border-box;
+	color: white;
+	background: $primaryColor;
+	height: auto;
+	@extend %defaultWidth;
+
+
+	.row {
+		display: inline-block;
+		padding: 3%;
+		max-width: 100%;
+		h1 {
+			color: silver;
+		}
+
+		p {
+			text-align: justify;
+			text-indent: 3em;
+		}
+
+		@include medium-screen {
+			margin: 3%;
+
+			p {
+				font-size: 1.1em;
+			}
+
+			h1 {
+				font-size: 2em;
+			}
+		}
+	}
+}

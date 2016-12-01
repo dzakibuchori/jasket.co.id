@@ -1,0 +1,288 @@
+#kualitas .row, #desain .row, #kirim .row {
+  padding: 30px;
+  max-width: 100%; }
+#kualitas .content, #desain .content, #kirim .content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px; }
+
+#kualitas, #desain, #kirim, #tentangkami, #harga, #kemitraan, .navbar-wrapper, .carousel .item, footer {
+  width: 100%; }
+
+#kualitas, #desain, #kirim {
+  display: inline-block;
+  margin: -10px 0;
+  padding: 0;
+  border: 0;
+  box-shadow: 0; }
+
+#kualitas, #desain, #kirim {
+  height: 400px;
+  background-position: center;
+  background-size: cover; }
+  @media only screen and (max-width: 767px) {
+    #kualitas, #desain, #kirim {
+      height: auto; } }
+
+#tentangkami, #harga, #kemitraan {
+  box-sizing: border-box;
+  color: white;
+  background: #383838;
+  height: auto; }
+  #tentangkami .row, #harga .row, #kemitraan .row {
+    display: inline-block;
+    padding: 3%;
+    max-width: 100%; }
+    #tentangkami .row h1, #harga .row h1, #kemitraan .row h1 {
+      color: silver; }
+    #tentangkami .row p, #harga .row p, #kemitraan .row p {
+      text-align: justify;
+      text-indent: 3em; }
+    @media only screen and (max-width: 767px) {
+      #tentangkami .row, #harga .row, #kemitraan .row {
+        margin: 3%; }
+        #tentangkami .row p, #harga .row p, #kemitraan .row p {
+          font-size: 1.1em; }
+        #tentangkami .row h1, #harga .row h1, #kemitraan .row h1 {
+          font-size: 2em; } }
+
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url(/jasket.co.id/fonts/AlegreyaSans-Regular.ttf); }
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background-color: gray; }
+
+h1, h2, h3 {
+  font-family: Viga, sans-serif;
+  color: silver; }
+
+p {
+  color: white;
+  font-family: Philosopher, sans-serif;
+  font-size: 17.6px; }
+
+#totentangkami, #tokemitraan, #toharga, #tokontakkami {
+  position: relative;
+  top: -90px; }
+  @media only screen and (max-width: 767px) {
+    #totentangkami, #tokemitraan, #toharga, #tokontakkami {
+      top: -49.5px; } }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+  color: orange !important;
+  background-color: transparent !important; }
+  .navbar-inverse .navbar-nav > .active > a:before, .navbar-inverse .navbar-nav > .active > a:focus:before, .navbar-inverse .navbar-nav > .active > a:hover:before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    z-index: -1;
+    height: 3px;
+    background: orange;
+    -webkit-transition-property: left, right;
+    -o-transition-property: left, right;
+    transition-property: left, right;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; }
+  @media only screen and (max-width: 767px) {
+    .navbar-inverse .navbar-nav > .active > a:before, .navbar-inverse .navbar-nav > .active > a:focus:before, .navbar-inverse .navbar-nav > .active > a:hover:before {
+      left: 50%;
+      right: 50%; } }
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height: 90px !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.5); }
+  @media only screen and (max-width: 767px) {
+    .navbar-wrapper {
+      position: fixed;
+      height: 63px !important;
+      margin-bottom: 1px;
+      background-color: #383838;
+      box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.5); } }
+
+.navbar {
+  top: 20px;
+  font-family: "Alegreya Sans", verdana, serif !important;
+  font-size: 20px;
+  background-color: transparent;
+  border-radius: 0;
+  border-width: 0; }
+  @media only screen and (max-width: 767px) {
+    .navbar {
+      top: 0px;
+      font-size: 16px; } }
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.7s ease; }
+    .navbar a:hover, .navbar a:focus, .navbar a:active {
+      color: orange !important;
+      cursor: pointer; }
+    .navbar a:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      z-index: -1;
+      height: 3px;
+      background: orange;
+      -webkit-transition-property: left, right;
+      -o-transition-property: left, right;
+      transition-property: left, right;
+      -webkit-transition-duration: 0.3s;
+      -o-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      -o-transition-timing-function: ease-out;
+      transition-timing-function: ease-out; }
+    .navbar a:hover:before, .navbar a:active:before, .navbar a:focus:before {
+      left: 5%;
+      right: 5%; }
+      @media only screen and (max-width: 767px) {
+        .navbar a:hover:before, .navbar a:active:before, .navbar a:focus:before {
+          left: 50%;
+          right: 50%; } }
+  .navbar .navbar-brand > a {
+    color: silver; }
+    .navbar .navbar-brand > a:hover:before, .navbar .navbar-brand > a:focus:before, .navbar .navbar-brand > a:active:before {
+      left: 50%;
+      right: 50%; }
+  .navbar .navbar-brand svg {
+    position: absolute;
+    top: -5px; }
+    @media only screen and (max-width: 767px) {
+      .navbar .navbar-brand svg {
+        left: -20px;
+        -webkit-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+        transform: scale(0.6); } }
+  .navbar .navbar-nav > li > a {
+    color: white; }
+  .navbar.navbar-inverse .navbar-collapse {
+    border: none;
+    box-shadow: none;
+    text-align: right; }
+    @media only screen and (max-width: 767px) {
+      .navbar.navbar-inverse .navbar-collapse {
+        float: right;
+        position: relative;
+        top: 20px;
+        background-color: rgba(50, 50, 50, 0.5); } }
+
+.navbar-toggle {
+  top: 5px; }
+  .navbar-toggle::before {
+    content: "MENU";
+    font-size: 14px;
+    color: silver;
+    left: -50px;
+    top: 6px;
+    position: absolute;
+    width: 50px;
+    color: white; }
+
+.carousel .item {
+  height: 100vh; }
+  @media only screen and (max-width: 767px) {
+    .carousel .item {
+      top: 62px; } }
+  .carousel .item > .fill {
+    width: inherit;
+    height: inherit;
+    background-position: center;
+    background-size: cover; }
+  .carousel .item #car1 {
+    background-image: url("http://i.imgur.com/g3HzYAI.jpg"); }
+  .carousel .item #car2 {
+    background-image: url("http://i.imgur.com/V7MHIMe.jpg"); }
+  .carousel .item #car3 {
+    background-image: url("http://i.imgur.com/8HjjHiB.jpg"); }
+
+.carousel-caption {
+  left: 30%;
+  right: 30%;
+  bottom: 10%;
+  width: 40%; }
+  .carousel-caption p {
+    font-weight: bold;
+    font-size: 32px; }
+  .carousel-caption[role="left"] {
+    left: 15%;
+    text-align: left; }
+  .carousel-caption .btn {
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px; }
+  .carousel-caption :last-child {
+    font-weight: normal;
+    font-size: 14px; }
+    .carousel-caption :last-child a {
+      color: yellow;
+      text-decoration: none;
+      transition: color 0.7s ease;
+      font-weight: bold;
+      font-size: 16px; }
+      .carousel-caption :last-child a:hover, .carousel-caption :last-child a:focus, .carousel-caption :last-child a:active {
+        color: orange !important;
+        cursor: pointer; }
+  @media only screen and (max-width: 767px) {
+    .carousel-caption {
+      bottom: 20%;
+      left: 15%;
+      text-align: left; }
+      .carousel-caption p {
+        font-size: 17.6px; }
+      .carousel-caption :last-child a {
+        font-size: 14px !important;
+        display: block; } }
+
+#kualitas {
+  background-image: url("http://i.imgur.com/8HjjHiB.jpg");
+  background-attachment: fixed; }
+
+#desain {
+  background-image: url("http://i.imgur.com/V7MHIMe.jpg");
+  background-attachment: fixed; }
+
+#kirim {
+  background-image: url("http://i.imgur.com/kmQ3Tlq.jpg");
+  background-attachment: fixed; }
+
+footer {
+  height: 100vh; }
+
+.backtotop {
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding-top: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  cursor: pointer; }
+  .backtotop > a {
+    color: rgba(255, 255, 255, 0.5); }
+    .backtotop > a:hover, .backtotop > a:focus {
+      color: rgba(255, 255, 255, 0.8); }
+
+/*# sourceMappingURL=style.css.map */
